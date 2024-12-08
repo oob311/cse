@@ -1,0 +1,9 @@
+INSTALL BurpSuite community edition
+Go to firefox and add extension foxyproxy
+Enter ip address : 127.0.0.1 and port as 8080
+Now go to settings in firefox and search xy settings
+Click on manual configuration and enter 127.0.0.1 and port as 8080 in http proxy and also use it for https and click on ok
+Go to http://burp and download ca certificate
+Go to certificate settings in firefox and import this downloaded certificate
+In burpsuite community edition , open proxy and click on intercept on
+Now open http://testphp.vulnweb.com and refresh page , u will find its data in burpsuite
