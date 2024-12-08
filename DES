@@ -1,0 +1,23 @@
+from Crypto.Cipher import DES
+from Crypto.Util.Padding import pad, unpad
+import base64
+
+def des_encrypt(key, data):
+    cipher = DES.new(key, DES.MODE_CBC)
+    iv = cipher.iv
+    encrypted_data = cipher.encrypt(pad(data.encode(), DES.block_size))
+    return base64.b64encode(iv + encrypted_data).decode()
+
+def des_decrypt(key, encrypted_data):
+    encrypted_data = base64.b64decode(encrypted_data)
+    iv = encrypted_data[:DES.block_size]
+    encrypted_data = encrypted_data[DES.block_size:]
+    cipher = DES.new(key, DES.MODE_CBC, iv)
+    return unpad(cipher.decrypt(encrypted_data), DES.block_size).decode()
+
+key = b'mysecret'
+data = "Hello, DES!"
+encrypted = des_encrypt(key, data)
+print("Encrypted:", encrypted)
+decrypted = des_decrypt(key, encrypted)
+print("Decrypted:", decrypted)
