@@ -1,0 +1,22 @@
+sudo apt-get update
+sudo apt install ufw
+sudo ufw enable
+sudo ufw status
+sudo ufw default deny incoming
+sudo ufw default allow incoming
+sudo su
+ufw allow from (your ip address)
+#find your ip-address using "ipconfig" command in command prompt of your system and take ipv4 address
+ufw allow 21:80/tcp
+sudo ufw status
+sudo apt install iptables
+iptables -F
+iptables -L
+iptables -I INPUT 1 -s (ip address) -j ACCEPT
+#ip-address u will get by using command “nslookup www.google.com” in command prompt in windows
+iptables -L
+iptables -A INPUT -s (ip address) -j DROP
+iptables -L
+iptables -D INPUT 1
+iptables -L
+iptables -L --line-numbers
