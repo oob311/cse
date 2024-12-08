@@ -1,0 +1,13 @@
+open beebox in browser directly or do download using below 5 steps:
+1.Download vmware workstation pro
+2.Download beebox
+3.Extract beebox
+4.Open it and select 2nd option in beebox folder , open it using vmware workstation
+5.Now open mozrilla firefox inside beebox, u will be redirected to bwap website
+
+After opening beebox -->:
+Login using username:bee , password : bug
+Now select cross site scripting – reflected GET and click on hack
+Enter username and password as : <script>alert(1)</script>
+Now select cross site scripting – stored blog and click on hack
+Now enter the script : <script>alert(1)</script> and submit
